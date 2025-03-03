@@ -2,7 +2,6 @@ FROM node:22 as builder
 
 WORKDIR /var/lib/app/
 COPY ./package.json ./
-COPY ./package-lock.json ./
 COPY ./src/ ./src
 COPY ./public/ ./public
 
