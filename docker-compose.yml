@@ -12,23 +12,23 @@ services:
     depends_on:
       - web
       - client
-      - server  # Renamed from 'api' to 'server'
+      - server 
 
   web:
     build: ./web
     container_name: web
     restart: always
     volumes:
-      - ./web/dist:/usr/share/nginx/html/web
+      - /usr/share/nginx/html/web
 
   client:
     build: ./client
     container_name: client
     restart: always
     volumes:
-      - ./client/dist:/usr/share/nginx/html/client
+      - /usr/share/nginx/html/client
 
-  server:  # Renamed from 'api' to 'server'
+  server:
     build: ./server
     container_name: server
     restart: always
