@@ -10,7 +10,7 @@ ARG PUBLIC_URL
 RUN npm install --legacy-peer-deps
 RUN npm run build
 
-FROM nginx:stable-alpine
+FROM nginx:latest
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY --from=builder /var/lib/app/build/ /var/www/
