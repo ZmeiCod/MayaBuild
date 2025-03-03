@@ -1,8 +1,8 @@
 FROM node:22.14.0
 
-WORKDIR /app
+WORKDIR /server
 
-COPY package.json package-lock.json
+COPY package.json ./
 RUN npm install
 
 COPY . .
@@ -10,4 +10,4 @@ COPY . .
 RUN npm run build
 
 EXPOSE 5000
-CMD ["npm", "start"]
+CMD ["node", "index.js"]
