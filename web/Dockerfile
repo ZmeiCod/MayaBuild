@@ -6,7 +6,7 @@ COPY ./src/ ./src
 COPY ./public/ ./public
 
 ARG PUBLIC_URL
-RUN npm install --legacy-peer-deps
+RUN npm i --legacy-peer-deps
 RUN npm run build
 
 FROM nginx:latest
