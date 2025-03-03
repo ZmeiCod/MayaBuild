@@ -1,4 +1,4 @@
-FROM node:alpine as build
+FROM node:alpine as builder
 
 WORKDIR /app
 COPY package.json package-lock.json ./
@@ -12,4 +12,4 @@ COPY --from=builder /app/build /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
-CMD [ "nginx"]
+CMD ["nginx", "-g", "daemon off;"]
