@@ -11,7 +11,7 @@ const errorHandler = require("./middleware/ErrorHandlingMiddleware");
 const fileUpload = require("express-fileupload");
 const path = require("path");
 
-const PORT = process.env.PORT;
+// const PORT = process.env.PORT;
 let corsOptions = {
   origin: ['http://localhost:3000'],
 }
@@ -30,7 +30,7 @@ const start = async () => {
   try {
     await sequelize.authenticate();
     await sequelize.sync();
-    app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+    app.listen(PORT, '0.0.0.0', () => console.log(`Server started on port ${PORT}`));
   } catch (e) {
     console.log(e);
   }
