@@ -1,4 +1,4 @@
-FROM node:alpine as builder
+FROM node:22 as builder
 
 WORKDIR /var/lib/app/
 COPY ./package.json ./
