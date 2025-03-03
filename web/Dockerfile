@@ -3,7 +3,7 @@ FROM node:alpine as build
 COPY package.json package.json
 RUN npm install --legacy-peer-deps
 COPY . .
-RUN npm start
+RUN npm build
 
 FROM nginx:stable-alpine
 
